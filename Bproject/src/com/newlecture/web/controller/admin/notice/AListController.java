@@ -29,7 +29,7 @@ public class AListController extends HttpServlet {
 		String[] delIds = request.getParameterValues("del-id");
 		String cmd = request.getParameter("cmd");
 		
-		
+		                   
 		switch(cmd) {
 		case "일괄공개":
 			for(String openId : openIds)
