@@ -12,6 +12,29 @@ import java.util.List;
 import com.newlecture.web.entity.Notice;
 
 public class NoticeService {
+	
+		public int removeNoticeAll(int[] ids){
+			return 0;
+		}
+		
+		public int pubNoticeAll(int[] oids, int[] cids) {
+			return 0;
+		}
+		public int insertNotice(Notice notice){
+			return 0;
+		}
+		public int deleteNotice(int id){
+			
+			return 0;
+		}
+		public int updateNotice(Notice notice){
+			
+			return 0;
+		}
+		List<Notice> getNoticeNewestList(){
+			
+			return null;
+		}
 	  public List<Notice> getNoticeList(){
 	      return getNoticeList("title", "", 1);
 	   }

@@ -8,8 +8,8 @@
     <meta charset="UTF-8">
     <title>공지사항목록</title>
 
-    <link href="/css/layout.css" type="text/css" rel="stylesheet" />
-    <link href="/css/index.css" type="text/css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/css/layout.css" type="text/css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/css/index.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>

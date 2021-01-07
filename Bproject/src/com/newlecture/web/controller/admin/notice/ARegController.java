@@ -13,7 +13,7 @@ import com.newlecture.web.entity.Notice;
 import com.newlecture.web.service.NoticeService;
 
 @WebServlet("/admin/board/notice/reg")
-public class RegController extends HttpServlet{
+public class ARegController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
