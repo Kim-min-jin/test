@@ -174,6 +174,9 @@
 									</c:forTokens>
 									</td>
 								</tr>
+								<tr class="content">
+									<td colspan="4">${n.content}</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
