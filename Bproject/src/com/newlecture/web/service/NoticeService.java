@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -203,11 +204,38 @@ public class NoticeService {
 		   }
 		   */
 		   public int deleteNoticeAll(int[] ids) {
+			   int result = 0;
+				
+				String params = "";
+				
+				for(int i=0; i<ids.length; i++) {
+					params += ids[i];
+					if(i < ids.length-1)
+						params += ",";
+				}
+		    	String sql = "DELETE NOTICE WHERE ID IN ("+params+")";
+		    	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+				
+				try {
+					Class.forName("oracle.jdbc.driver.OracleDriver");
+					Connection con = DriverManager.getConnection(url,"system","oracle");
+					Statement st = con.createStatement();
+					
+					result = st.executeUpdate(sql);	
+					
+					st.close();
+					con.close();
+				} catch (ClassNotFoundException e) {
+			
+					e.printStackTrace();
+				} catch (SQLException e) {
+			
+					e.printStackTrace();
+				}
+						
+				return result;
 
-		      return 0;
 		   }
-
-		 
 		
 		   
 		}
