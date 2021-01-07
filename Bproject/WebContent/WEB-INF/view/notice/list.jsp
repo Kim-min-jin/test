@@ -190,17 +190,17 @@
 				</table>
 			</div>
 			
+			<c:set var="page" value="${(empty param.p)?1:param.p}"/>
+			<c:set var="startNum" value="${page-(page-1)%5}"/>
+			<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10),'.')}"/>
+	
 			<div class="indexer margin-top align-right">
 				<h3 class="hidden">현재 페이지</h3>
-				<div><span class="text-orange text-strong">${(empty param.p)?1:param.p}</span> / 1 pages</div>
+				<div><span class="text-orange text-strong">${(empty param.p)?1:param.p}</span> / ${lastNum } pages</div>
 			</div>
 
 			<div class="margin-top align-center pager">	
 				<div>		
-			<c:set var="page" value="${(empty param.p)?1:param.p}"/>
-			<c:set var="startNum" value="${page-(page-1)%5}"/>
-			<c:set var="lastNum" value="${count/10}"/>
-			<div>${lastNum }</div>
 			
 				<c:if test="${startNum>1}">
 					<a class="btn btn-prev" href="?p=${startNum-1}&t=&q=">이전</a>
@@ -213,17 +213,17 @@
 	<ul class="-list- center">
 		
 		<c:forEach var="i" begin="0" end="4">
-	<%--	<c:if test="${(startNum+i)<=lastNum}"> --%>
+		<c:if test="${(startNum+i)<=lastNum}"> 
 		<li><a class="-text- ${(page==(startNum+i))?'orange ':''} bold" href="?p=${startNum+i}&f=${param.f}&q=${param.q}" >${startNum+i}</a></li>
-		<%--</c:if> ${fn:substringBefore(Math.ceil(count/10),'.')} --%>
+		</c:if> 
 		</c:forEach>		
 	</ul>
 	<div>
 		
-		<c:if test="${startNum+5<lastNum}">
+		<c:if test="${startNum+4<lastNum}">
 			<a href="?p=${startNum+5}&t=&q=" class="btn btn-next">다음</a>	
 		</c:if>
-		<c:if test="${startNum+5>=lastNum}">
+		<c:if test="${startNum+4>=lastNum}">
 			<span class="btn btn-next" onclick="alert('다음 페이지가 없습니다.');">다음</span>
 		</c:if>
 	</div>
