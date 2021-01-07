@@ -199,7 +199,8 @@
 				<div>		
 			<c:set var="page" value="${(empty param.p)?1:param.p}"/>
 			<c:set var="startNum" value="${page-(page-1)%5}"/>
-			<c:set var="lastNum" value="23"/>
+			<c:set var="lastNum" value="${count/10}"/>
+			<div>${lastNum }</div>
 			
 				<c:if test="${startNum>1}">
 					<a class="btn btn-prev" href="?p=${startNum-1}&t=&q=">이전</a>
