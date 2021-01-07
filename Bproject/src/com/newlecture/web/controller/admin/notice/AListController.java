@@ -46,7 +46,7 @@ public class AListController extends HttpServlet {
 		}
 		
 		response.sendRedirect("list");
-	}
+}
 		
 
 	@Override

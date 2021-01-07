@@ -76,17 +76,19 @@ public class NoticeService {
 		            int hit = rs.getInt("HIT");
 		            String files = rs.getString("FILES");
 		            String content = rs.getString("CONTENT");
+		            boolean pub = rs.getBoolean("PUB");
 
 		            
 		            Notice notice = new Notice(
-		                  id,
-		                  title,
-		                  writerId,
-		                  regdate,
-		                  hit,
-		                  files,
-		                  content
-		                  );
+		            		id,
+		            		title,
+		            		writerId,
+		            		regdate,
+		            		hit,
+		            		files,
+		            		content,
+		            		pub
+		            		);
 		               
 		            list.add(notice); //
 		         }
@@ -166,7 +168,7 @@ public class NoticeService {
 					int hit = rs.getInt("HIT");
 					String files = rs.getString("FILES");
 					String content = rs.getString("CONTENT");
-		
+					boolean pub = rs.getBoolean("PUB");
 					
 					notice = new Notice(
 							nid, 
@@ -175,7 +177,8 @@ public class NoticeService {
 							regdate,
 							hit,
 							files,
-							content
+							content,
+							pub
 							);
 				
 				}
