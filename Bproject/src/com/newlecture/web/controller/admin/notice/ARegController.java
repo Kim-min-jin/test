@@ -38,13 +38,15 @@ public class ARegController extends HttpServlet{
 			notice.setWriterId("newlec");
 			
 			NoticeService service = new NoticeService();
-			service.insertNotice(notice);
+			int result = service.insertNotice(notice);
 			
-			response.setCharacterEncoding("utf-8");
-			response.setContentType("text/html; charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.printf("title : %s<br >", title);
-			out.printf("content : %s<br >", content);
-			out.printf("isOpen : %s<br >", isOpen);
+		
+			
+			request.setCharacterEncoding("utf-8");
+			//response.setContentType("text/html; charset=UTF-8");
+		
+			response.sendRedirect("list");
+			
+			
 	}
 }
