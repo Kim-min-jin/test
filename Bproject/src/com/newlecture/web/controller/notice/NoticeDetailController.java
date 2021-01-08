@@ -29,9 +29,11 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			NoticeService service = new NoticeService();
 			Notice notice = service.getNotice(id);
 			request.setAttribute("n", notice);
-				request
-				.getRequestDispatcher("/WEB-INF/view/notice/detail.jsp")
-				.forward(request, response);
+			
+			
+			request
+			.getRequestDispatcher("/WEB-INF/view/notice/detail.jsp")
+			.forward(request, response);
 		}
 
 		}
